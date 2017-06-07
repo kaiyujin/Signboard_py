@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QApplication,QWidget,QGridLayout,QPushButton
 from PyQt5.QtGui import QIcon
 
 SLACK_TOKEN = os.environ['SLACK_TOKEN']
-API_URL = 'https://ebisol.slack.com/api/users.profile.set'
+API_URL = 'https://{0}/api/users.profile.set'.format(os.environ['SLACK_DOMAIN'])
 
 def change_status(icon,message):
     message = '"status_text":"{0}"'.format(message)
